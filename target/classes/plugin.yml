@@ -1,0 +1,76 @@
+name: PTCClans
+version: '1.0-SNAPSHOT'
+main: sdfrpe.github.io.ptcclans.PTCClans
+api-version: '1.8'
+authors: [SDFRPE]
+description: Sistema de clanes para PTC con soporte para guerras y placeholders
+website: https://sdfrpe.com/
+softdepend: [PlaceholderAPI, PTC, LuckPerms, Creditos]
+commands:
+  clan:
+    aliases: [clanes, c]
+    description: Comandos principales del sistema de clanes
+    usage: |
+      /clan - Abrir menú principal de clanes
+      /clan list - Ver todos los clanes
+      /clan info - Información de tu clan
+    permission: ptcclans.clan
+    permission-message: '§c✖ No tienes permiso para usar este comando.'
+
+  clanwar:
+    aliases: [cw, war]
+    description: Comandos del sistema de guerras de clanes
+    usage: |
+      /clanwar - Abrir menú de guerras
+    permission: ptcclans.clanwar
+    permission-message: '§c✖ No tienes permiso para usar este comando.'
+
+  cwtest:
+    aliases: [wartest, testwar]
+    description: Comandos de testing para guerras de clanes (SOLO DESARROLLO)
+    usage: |
+      /cwtest quick <clan1> <clan2> [minutos] - Crear guerra rápida
+      /cwtest instant <clan1> <clan2> - Crear guerra instantánea
+      /cwtest accept <warId> - Auto-aceptar guerra
+      /cwtest list - Listar guerras de prueba
+      /cwtest info <warId> - Información de guerra
+      /cwtest clear - Limpiar guerras de prueba
+    permission: ptcclans.admin
+    permission-message: '§c✖ Necesitas permisos de administrador para testing.'
+
+permissions:
+  ptcclans.*:
+    description: Acceso completo a PTCClans
+    default: true
+    children:
+      ptcclans.clan: true
+      ptcclans.clanwar: true
+      ptcclans.admin: true
+
+  ptcclans.clan:
+    description: Usar comandos de clanes
+    default: true
+
+  ptcclans.clanwar:
+    description: Usar comandos de guerras
+    default: true
+
+  ptcclans.admin:
+    description: Comandos de administración y testing
+    default: op
+    children:
+      ptcclans.admin.reload: true
+      ptcclans.admin.delete: true
+      ptcclans.admin.test: true
+
+  ptcclans.admin.reload:
+    description: Recargar configuración
+    default: op
+
+  ptcclans.admin.delete:
+    description: Eliminar clanes de otros jugadores
+    default: op
+
+  ptcclans.admin.test:
+    description: Usar comandos de testing
+    default: op
