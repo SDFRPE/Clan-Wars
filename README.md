@@ -1,7 +1,7 @@
 # Clan Wars - BungeeMode
 
 ## Descripción
-Este repositorio contiene el código fuente del proyecto desarrollado con fines académicos y de aprendizaje. El objetivo principal es servir como referencia técnica y base de estudio para quienes estén interesados en la temática abordada.
+Este repositorio contiene el código fuente del proyecto desarrollado para la comunidad de Minecraft. El objetivo principal es servir como referencia técnica y base de estudio para quienes estén interesados en la temática abordada.
 
 ---
 
